@@ -1,4 +1,4 @@
-const CONSOLE_LINE_MARK = '->';
+const CONSOLE_LINE_MARK = '>';
 const CONSOLE_MESSAGE_SUCCESSFULL="OK";
 const ENTER = "\n";
 
