@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MatrioshTS</title>
+    <link href="../styles/styleIde.css" rel="stylesheet"/>
+    <script src="../scripts/front/ide.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../scripts/exceptions/creatorException.js"></script>
+    <script src="../scripts/parsers/analyzer.js"></script>
+    <script src="../scripts/structure/Nodo.js"></script>
+    <script src="../scripts/structure/Constantes.js"></script>
+    <script src="../scripts/structure/SimboloAncestor.js"></script>
+    <script src="../scripts/structure/ListaErrores.js"></script>
+    <script src="../scripts/structure/Variable.js"></script>
+    <script src="../scripts/structure/TablaHash.js"></script>
+    <script src="../scripts/structure/ListaSimbolos.js"></script>
+    <script src="../scripts/logic/BackEnd.js"></script>
+    <script src="../scripts/utils/GraphicUtil.js"></script>
+    <script src="../scripts/structure/ListaFunciones.js"></script>
+    <script src="../scripts/structure/Funcion.js"></script>
+    <script src="../scripts/structure/Arreglo.js"></script>
+    <script src="../scripts/structure/Nulo.js"></script>
+    <!-- VARIABLES GLOBALES -->
+    <script type="text/javascript">
+    </script>
+</head>
+<body background="../images/fondo-azul.jpg">
+<div id="divEntrada" align="center">
+<textarea id="txtEntrada" cols="175" rows="28" style="background-color:#CCC;font-style:italic">
+    function miFuncion():void{
+        function miSubFuncion():void{
+        }
+    }
+    function segundaFuncion():void{
+
+    }
+</textarea>
+</div>
+<div id="divBotones" align="center" >
+    <button id="btnTraducir" class="button">Traducir código</button>
+    <button id="btnGenerar" class="button">Ejecutar código</button>
+    <button id="btnGraficar"class="button">Graficar Ast</button>
+    <button id="btnTablaSimbolos" class="button">Ver Tabla Simbolos</button>
+    <button id="btnTablaErrores" class="button">Ver Tabla Errores</button>
+    <button id="btnLimpiarConsola" class="button">Limpiar Consola</button>
+</div>
+<div id="consola" align="center">
+<textarea id="txtConsola" disabled="disabled" cols="175" rows="10" style="background-color:#000000;font-style:inherit;color: chartreuse">
+</textarea>
+</div>
+    <script type="text/javascript">
+        /**
+         * Metodos del Front
+         */
+        $(document).ready(function(){
+
+            //PASAMOS EL OBJETO DE CONSOLA
+            _txtConsola = $("#txtConsola");
+            $("#txtConsola").val(CONSOLE_LINE_MARK);
+
+            //CREAMOS LOS EVENTOS DE LOS BOTONES
+            $("#btnGenerar").click(function(){
+                entrada = $("#txtEntrada").val();
+                ejecutar(entrada);
+            });
+
+            $("#btnLimpiarConsola").click(function(){
+                $("#txtConsola").val(CONSOLE_LINE_MARK);
+            });
+
+            $("#btnGraficar").click(function(){
+                let cadAst=getStringAst();
+                let pagina = "https://dreampuf.github.io/GraphvizOnline/#"+cadAst;
+                let url=encodeURI(pagina);
+                window.open(url);
+            });
+
+
+
+        });
+    </script>
+</body>
+</html>

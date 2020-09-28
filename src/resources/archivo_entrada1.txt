@@ -1,0 +1,87 @@
+
+
+let x:string = 'asfasd', y:number , z=4 ;
+let a,b,c ;
+
+function mi_funcion (MI_VAR:number, mi_var2:string):void {}
+
+
+function mi_funcion ():void {}
+
+        type llanta = {
+        rin:number,
+        marca:string
+        } ;
+        type carro = {
+            marca:string,
+            llanta1: llanta
+        } ;
+
+let x : boolean = 3 < 4 && 3 < 3 || 4> 4 && !true ;
+
+let x : number =  24 + 4 < 3 + 1 - 4 , s ;
+
+let miVar : number = 5 + 6 * 4 -4  / 4 ** 5 ;
+
+let var2 : number = 555+3 * 5 + 4 + 4 / 4 - 4 / 2 / 3 ;
+
+let var2 : number = 555+3 * 5 + 4 + 4 / 4 - 4 / (2 / 3) ;
+
+let var2 : number = funcion(3,5) ;
+
+let var2 : number = miFuncion(3,5).x.pop.y[4][5].y[4] ;
+
+let miVar : number = null;
+
+let miArr: number = [1,3,5,5] ;
+
+let miMatriz: number = [[1,3,5,5],[1,3,5,5],[1,3,5,5],[1,3,5,5]] ;
+
+x = 3 ;
+
+s = -4 ;
+
+x = -4- -5-4+x++ -x-- ;
+
+m = x-- ;
+
+x = !false && true || !(true == false) ;
+
+x = !false && true?true:false || !(true == false) ;
+
+let eddieLives: string = 5 > 4 ? "Sip" : "Nop" ;
+
+eddieLives = !x? "Sip" : "Nop" ;
+
+let lives: string = !(5 > 4) ? "Sip" : "Nop" ;
+
+x = !false && !(3>4 && (!false|| x))?true:false || !(true == false) ;
+
+
+
+        if (true) { }
+        if (false) {} else if (true){}
+        if(false) { } else { }
+
+        do{} while(true) ;
+
+
+switch(x) {
+    case 2:
+    case 3:
+    default :
+}
+
+for(let x = 0 ; x <4 ; x++){
+}
+for(let x = 0 ; x <4 ; x=x+1){
+}
+for (const  prop in obj) {
+
+}
+for (let entry of iterable) {
+        break ;
+        continue ;
+        return ;
+        return 1 ;
+}
