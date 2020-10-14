@@ -23,6 +23,29 @@ var ListaErrores=(function(){
                 this.errores=[];
             };
         };
+        this.getStrTable=function (){
+            let cad;
+            cad='<cite style="font-size:x-large;">REPORTE DE ERRORES</cite><br/>'+
+                '<table border="1">'
+                +'<tr>'
+                +'<th>LINEA</th><th>COLUMNA</th><th>TIPO</th><th>DESCRIPCION</th>'
+                +'</tr>'
+            ;
+            for(i=0 ; i<this.errores.length;i++){
+                let e=this.errores[i];
+                let linea=e.fila;
+                let columna=e.fila;
+                let tipo=e.tipoError;
+                let descripcion=e.mensaje;
+                let row;
+                row='<tr>';
+                row+='<td>'+linea+'</td>'+'<td>'+columna+'</td>'+'<td>'+tipo+'</td>'+'<td>'+descripcion+'</td>';
+                row+='</tr><br/>'
+                cad+=row;
+            }
+            cad+='</table>';
+            return cad;
+        };
     }
     return ListaErrores;
 }());

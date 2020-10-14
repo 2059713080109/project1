@@ -60,21 +60,47 @@
             _txtConsola = $("#txtConsola");
             $("#txtConsola").val(CONSOLE_LINE_MARK);
 
-            //CREAMOS LOS EVENTOS DE LOS BOTONES
+            /**
+             * Ejecutar código
+             */
             $("#btnGenerar").click(function(){
                 entrada = $("#txtEntrada").val();
                 ejecutar(entrada);
             });
 
-            $("#btnLimpiarConsola").click(function(){
-                $("#txtConsola").val(CONSOLE_LINE_MARK);
-            });
-
+            /**
+             * Graficar AST
+             */
             $("#btnGraficar").click(function(){
                 let cadAst=getStringAst();
                 let pagina = "https://dreampuf.github.io/GraphvizOnline/#"+cadAst;
                 let url=encodeURI(pagina);
                 window.open(url);
+            });
+
+
+            /**
+             * Ver Tabla Errores
+             */
+            $("#btnTablaErrores").click(function(){
+                print("Renderizando tabla de errores.  "+new Date());
+                if(_backEnd==undefined){
+                    print("No hay tabla de errores que mostrar. ");
+                    return;
+                }
+                let w = window.open("tmpTablaErrores", "#");
+                let d = w.document.open();
+                let strTabla = _backEnd.listaErrores.getStrTable();
+                d.write("<!DOCTYPE html><html><header><title>MatrioshTS</title></header><body>"+strTabla+"</body></html>");
+                d.close();
+            });
+
+
+            /**
+             * Limpiar Consola
+             */
+            $("#btnLimpiarConsola").click(function(){
+                $("#txtConsola").val(CONSOLE_LINE_MARK);
             });
 
 
