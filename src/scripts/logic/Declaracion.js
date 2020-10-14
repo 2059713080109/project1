@@ -40,10 +40,17 @@ Declaracion.prototype.cargar = function (root,inherited){
         case "D_VAR=>id  D_VAR_P1":
         {
             let tipoDato;
-            let id;
-            id=root.getHijo(0).getLexVal();
+            let idNodo;
+            let variable;
+            idNodo=root.getHijo(0);
             tipoDato = this.cargar(root.getHijo(1),inherited);
-
+            variable = new Variable(idNodo.getLexVal(),tipoDato,inherited,ValorDefault[tipoDato.tipoDato]);
+            try {
+                this.listaSimbolosLocal.agregarSimbolo(variable);
+            }catch (e){
+                _backEnd.listaErrores.addError(idNodo.getFila(),idNodo.getColumna(),ErrorType.SEMANTIC,e.getMessage());
+                console.error(e);
+            }
             break;
         }
         case "D_VAR_P1=>igual CONDICION_TER":

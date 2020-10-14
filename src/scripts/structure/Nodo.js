@@ -59,6 +59,14 @@ var Nodo = (function (){
         return this.hijos[noHijo];
     };
 
+    Nodo.prototype.getFila= function (){
+        return this.fila;
+    };
+
+    Nodo.prototype.getColumna = function (){
+        return this.columna;
+    };
+
     return Nodo;
 }());
 Nodo["__class"] = "Nodo";

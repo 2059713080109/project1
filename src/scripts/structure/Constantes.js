@@ -23,12 +23,20 @@ const TipoDeclacion = {
     LET:"LET"
 };
 
+const ValorDefault = {
+    BOOLEAN: false,
+    NUMBER: 0,
+    STRING:"",
+    VOID:undefined,
+    NULL:undefined
+};
 
 const TipoDato = {
     BOOLEAN: "BOOLEAN",
     NUMBER:"NUMBER",
     STRING:"STRING",
-    VOID:"VOID"
+    VOID:"VOID",
+    NULL:"NULL"
 };
 
 const Indicador = {
