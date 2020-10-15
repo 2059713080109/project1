@@ -41,7 +41,23 @@ TablaSimbolos.prototype.getStrTablaSimbolos = function (){
         row+='<td>'+ambito+'</td>'+'<td>'+tipoObjeto +'</td>'+'<td>'+id+'</td>'+'<td>'+tipoDato+'</td>';
         row+='</tr><br/>'
         cad+=row;
-        console.log();
+    }
+
+    for(let i=0 ; i<this.listaFunciones.funcionHashtable.getSize();i++){
+        let funcion ;
+        let ambito;
+        let tipoObjeto;
+        let id;
+        let tipoDato;
+        funcion = this.listaFunciones.funcionHashtable.elementAt(i);
+        ambito = "Global";
+        tipoObjeto = funcion.constructor.name;
+        id = funcion.getId();
+        tipoDato = funcion.getTipoDato();
+        row='<tr>';
+        row+='<td>'+ambito+'</td>'+'<td>'+tipoObjeto +'</td>'+'<td>'+id+'</td>'+'<td>'+tipoDato+'</td>';
+        row+='</tr><br/>'
+        cad+=row;
     }
     cad+='</table>';
     return cad;

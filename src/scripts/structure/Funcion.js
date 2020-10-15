@@ -32,3 +32,9 @@ Funcion.prototype.setListaSimbolos = function (listaSimbolos) {
     this.listaSimbolos = listaSimbolos;
 }
 
+Funcion.prototype.getTipoDato = function (){
+    if(this.indTipoModificable==Indicador.S){
+        return DataType.NULL;
+    }
+    return this.tipoDato.tipoDato;
+};
