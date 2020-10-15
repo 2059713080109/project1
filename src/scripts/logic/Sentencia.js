@@ -52,22 +52,6 @@ Sentencia.prototype.cargar=function (root){
             declaracion.cargarRoot();
             break;
         }
-        case "DEC_TYPE=>type_ id igual llave_abre LIST_ATRIBUTOS llave_cierra":
-        {
-            break;
-        }
-        case "LIST_ATRIBUTOS=>DEC_ATRIBUTO  LIST_ATRIBUTOS_P":
-        {
-            break;
-        }
-        case "LIST_ATRIBUTOS_P=>coma_ DEC_ATRIBUTO LIST_ATRIBUTOS_P":
-        {
-            break;
-        }
-        case "LIST_ATRIBUTOS_P=>":
-        {
-            break;
-        }
         case "DEC_ATRIBUTO=>id dos_puntos TDATO":
         {
             break;

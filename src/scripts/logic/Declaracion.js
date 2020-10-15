@@ -72,7 +72,7 @@ Declaracion.prototype.cargar = function (root,inherited){
             return {
                 tipoDato:TipoDato.UNTYPED,
                 dimensiones:0
-            };;
+            };
         }
         case "D_VAR_P2=>igual CONDICION_TER":
         {
@@ -125,6 +125,32 @@ Declaracion.prototype.cargar = function (root,inherited){
         case "TDIMENSION=>":
         {
             return 0;
+        }
+        case "DEC_TYPE=>type_ id igual llave_abre LIST_ATRIBUTOS llave_cierra":
+        {
+            let idNodo;
+            let variable;
+            idNodo=root.getHijo(1);
+            variable = new Type(idNodo.getLexVal(),inherited);
+            try {
+                this.listaSimbolosLocal.agregarSimbolo(variable);
+            }catch (e){
+                _backEnd.listaErrores.addError(idNodo.getFila(),idNodo.getColumna(),ErrorType.SEMANTIC,e.getMessage());
+                console.error(e);
+            }
+            break;
+        }
+        case "LIST_ATRIBUTOS=>DEC_ATRIBUTO  LIST_ATRIBUTOS_P":
+        {
+            break;
+        }
+        case "LIST_ATRIBUTOS_P=>coma_ DEC_ATRIBUTO LIST_ATRIBUTOS_P":
+        {
+            break;
+        }
+        case "LIST_ATRIBUTOS_P=>":
+        {
+            break;
         }
         default:
         {
