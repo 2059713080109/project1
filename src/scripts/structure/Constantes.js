@@ -28,7 +28,7 @@ const ValorDefault = {
     NUMBER: 0,
     STRING:"",
     VOID:undefined,
-    NULL:undefined
+    UNTYPED:undefined
 };
 
 const TipoDato = {
@@ -36,7 +36,7 @@ const TipoDato = {
     NUMBER:"NUMBER",
     STRING:"STRING",
     VOID:"VOID",
-    NULL:"NULL"
+    UNTYPED:"UNTYPED"
 };
 
 const Indicador = {

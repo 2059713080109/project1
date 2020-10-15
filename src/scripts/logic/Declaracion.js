@@ -65,7 +65,10 @@ Declaracion.prototype.cargar = function (root,inherited){
         case "D_VAR_P1=>":
         {
             //Epsion
-            return undefined;
+            return {
+                tipoDato:TipoDato.UNTYPED,
+                dimensiones:0
+            };;
         }
         case "D_VAR_P2=>igual CONDICION_TER":
         {
