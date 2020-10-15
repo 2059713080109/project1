@@ -1,7 +1,8 @@
 class Funcion{
-    constructor(id, parametros, sentencias) {
+    constructor(id, parametros, tipoDato, sentencias) {
         this.id = id;
         this.parametros = parametros;
+        this.tipoDato = tipoDato;
         this.sentencias = sentencias;
     }
 }

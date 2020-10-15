@@ -152,6 +152,46 @@ Declaracion.prototype.cargar = function (root,inherited){
         {
             break;
         }
+        case "DEC_ATRIBUTO=>id dos_puntos TDATO":
+        {
+            break;
+        }
+        case "DEC_FUN=>function_ id par_abre LIST_PAR par_cierra dos_puntos TDATO llave_abre SENTENCIAS llave_cierra":
+        {
+            let idNodo;
+            let funcion;
+            let tipoDato;
+            idNodo=root.getHijo(1);
+            tipoDato = this.cargar(root.getHijo(6),inherited);
+            funcion = new Funcion(idNodo.getLexVal(),root.getHijo(3),tipoDato,root.getHijo(8));
+            try {
+                this.listaFunciones.agregarFuncion(funcion);
+            }catch (e){
+                _backEnd.listaErrores.addError(idNodo.getFila(),idNodo.getColumna(),ErrorType.SEMANTIC,e.getMessage());
+                console.error(e);
+            }
+            break;
+        }
+        case "LIST_PAR=>PARAM LIST_PAR_P ":
+        {
+            break;
+        }
+        case "LIST_PAR=>":
+        {
+            break;
+        }
+        case "LIST_PAR_P=>coma_ PARAM LIST_PAR_P":
+        {
+            break;
+        }
+        case "LIST_PAR_P=>":
+        {
+            break;
+        }
+        case "PARAM=>id  dos_puntos  TDATO":
+        {
+            break;
+        }
         default:
         {
             console.info("Declaracion.cargar: case no found. root.produccion: "+root.getProduccion());
