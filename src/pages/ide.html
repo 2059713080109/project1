@@ -78,6 +78,22 @@
                 window.open(url);
             });
 
+            /**
+             * Ver Tabla de Simbolos
+             */
+            $("#btnTablaSimbolos").click(function(){
+                print("Renderizando tabla de Simbolos.  "+new Date());
+                if(_backEnd==undefined){
+                    print("No hay tabla de simbolos que mostrar. ");
+                    return;
+                }
+                let w = window.open("tmpTablaSimbolos", "#");
+                let d = w.document.open();
+                let strTabla = _backEnd.ts.getStrTablaSimbolos();
+                d.write("<!DOCTYPE html><html><header><title>MatrioshTS</title></header><body>"+strTabla+"</body></html>");
+                d.close();
+                print("OK");
+            });
 
             /**
              * Ver Tabla Errores
@@ -93,6 +109,7 @@
                 let strTabla = _backEnd.listaErrores.getStrTable();
                 d.write("<!DOCTYPE html><html><header><title>MatrioshTS</title></header><body>"+strTabla+"</body></html>");
                 d.close();
+                print("OK");
             });
 
 

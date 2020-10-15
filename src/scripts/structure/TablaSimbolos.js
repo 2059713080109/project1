@@ -16,4 +16,33 @@ TablaSimbolos.prototype.getListaFunciones = function (){
 }
 TablaSimbolos.prototype.setListaFunciones = function (listaFunciones){
     this.listaFunciones = listaFunciones;
-}
+};
+
+TablaSimbolos.prototype.getStrTablaSimbolos = function (){
+    let cad;
+    cad='<cite style="font-size:x-large;">REPORTE DE TABLA DE SIMBOLOS</cite><br/>'+
+        '<table border="1">'
+        +'<tr>'
+        +'<th>AMBITO</th><th>TIPO DE OBJETO</th><th>ID</th><th>TIPO DE DATO</th>'
+        +'</tr>'
+    ;
+    for(let i=0 ; i<this.listaSimbolos.simboloIntHashtable.getSize();i++){
+        let simbolo ;
+        let ambito;
+        let tipoObjeto;
+        let id;
+        let tipoDato;
+        simbolo = this.listaSimbolos.simboloIntHashtable.elementAt(i);
+        ambito = "Global";
+        tipoObjeto = simbolo.constructor.name;
+        id = simbolo.getId();
+        tipoDato = simbolo.getTipoDato();
+        row='<tr>';
+        row+='<td>'+ambito+'</td>'+'<td>'+tipoObjeto +'</td>'+'<td>'+id+'</td>'+'<td>'+tipoDato+'</td>';
+        row+='</tr><br/>'
+        cad+=row;
+        console.log();
+    }
+    cad+='</table>';
+    return cad;
+};

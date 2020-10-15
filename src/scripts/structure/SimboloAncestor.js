@@ -26,3 +26,10 @@ SimboloAncestor.prototype.setTipoDato = function (newDataType){
     }
     this.tipoDato = newDataType;
 };
+
+SimboloAncestor.prototype.getTipoDato = function (){
+    if(this.indTipoModificable==Indicador.S){
+        return DataType.NULL;
+    }
+    return this.tipoDato.tipoDato;
+};
