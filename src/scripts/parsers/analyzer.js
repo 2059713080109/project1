@@ -431,7 +431,7 @@ case 44:
 
                     hijos = [];
                     hijos.push(new Nodo(EPSILON,undefined,undefined,yystate,DataType.EPSILON));
-                    this.$=new Nodo("",0,hijos,yystate);
+                    this.$=new Nodo("CONDICION_OR_P: or_ CONDICION_OR",0,hijos,yystate);
                 
 break;
 case 45:

@@ -485,7 +485,7 @@ CONDICION_OR_P: or_ CONDICION_OR
                 {{
                     hijos = [];
                     hijos.push(new Nodo(EPSILON,undefined,undefined,yystate,DataType.EPSILON));
-                    $$=new Nodo("",0,hijos,yystate);
+                    $$=new Nodo("CONDICION_OR_P: or_ CONDICION_OR",0,hijos,yystate);
                 }}
                 ;
 

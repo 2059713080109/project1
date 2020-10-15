@@ -167,7 +167,7 @@ switch(produccion) {
     {
         break;
     }
-    case "":
+    case "CONDICION_OR_P: or_ CONDICION_OR":
     {
         break;
     }
