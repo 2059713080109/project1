@@ -34,7 +34,7 @@ var ListaErrores=(function(){
             for(i=0 ; i<this.errores.length;i++){
                 let e=this.errores[i];
                 let linea=e.fila;
-                let columna=e.fila;
+                let columna=e.columna;
                 let tipo=e.tipoError;
                 let descripcion=e.mensaje;
                 let row;
