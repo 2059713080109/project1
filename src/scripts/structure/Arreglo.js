@@ -1,7 +1,7 @@
 class Arreglo extends SimboloAncestor{
-    constructor(valores,id) {
+    constructor(id,tipoDato,alcance) {
         super(id,DataType.ARRAY);
-        this.valores = valores;
+        //this.valores = valores;
     }
 }
 

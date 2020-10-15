@@ -44,7 +44,11 @@ Declaracion.prototype.cargar = function (root,inherited){
             let variable;
             idNodo=root.getHijo(0);
             tipoDato = this.cargar(root.getHijo(1),inherited);
-            variable = new Variable(idNodo.getLexVal(),tipoDato,inherited,ValorDefault[tipoDato.tipoDato]);
+            if(tipoDato.dimensiones==0){
+                variable = new Variable(idNodo.getLexVal(),tipoDato,inherited,ValorDefault[tipoDato.tipoDato]);
+            }else{
+                variable = new Arreglo(idNodo.getLexVal(),tipoDato,inherited);
+            }
             try {
                 this.listaSimbolosLocal.agregarSimbolo(variable);
             }catch (e){
