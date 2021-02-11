@@ -21,10 +21,14 @@ BackEnd.prototype.cargar=function (){
     if(this.root == undefined){
         throw "BackEnd.root es nulo";
     }
-    let sent = new Sentencia(this.ts.getListaSimbolos(),
+    let sentLoad = new Sentencia(this.ts.getListaSimbolos(),
                             this.ts.getListaSimbolos(),
                             this.ts.getListaFunciones(),
                             this.root);
-    sent.cargarS();
-    this.listaFunciones = this.ts.getListaFunciones();
+    sentLoad.cargarS();
+    let sentExecute = new Sentencia(this.ts.getListaSimbolos(),
+        this.ts.getListaSimbolos(),
+        this.ts.getListaFunciones(),
+        this.root);
+    sentExecute.ejecutarS();
 };
